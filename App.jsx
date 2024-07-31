@@ -1,22 +1,28 @@
+import AppName from "./AppName";
+import AddTodo from "./AddTodo";
+import "./App.css/";
+import TodoItems from "./TodoItems";
 function App() {
+  const todoItems = [
+    {
+      name: "Bread",
+      dueDate: "15/08/2024",
+    },
+    {
+      name: "Milk",
+      dueDate: "15/08/2024",
+    },
+    {
+      name: "Gym",
+      dueDate: "05/08/2024",
+    },
+  ];
+
   return (
     <center className="todo-container">
-      <h1>TODO App</h1>
-      <div class="container text-center">
-        <div class="row">
-          <div class="col-6">
-            <input type="text" placeholder="Enter todo here" />
-          </div>
-          <div class="col-4">
-            <input type="date" />
-          </div>
-          <div class="col-2">
-            <button type="button" class="btn btn-success">
-              Add
-            </button>
-          </div>
-        </div>
-      </div>
+      <AppName />
+      <AddTodo />
+      <TodoItems todoItems={todoItems} />
     </center>
   );
 }
